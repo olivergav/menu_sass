@@ -1,18 +1,4 @@
-// nesting
-.ms-menu{
-    &__hamburger {
+@import "common/normalize";
 
-    }
-
-    &_box {
-
-    }
-
-    &__link {
-
-    }
-
-    &__link--active {
-
-    }
-}
+@import "utils/mixins";
+@import "components/menu";
