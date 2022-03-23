@@ -6,3 +6,8 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 );
+
+$base-font-size: 16;
+
+$font-path: '../fonts/';
+$fonts: ('Roboto Bold': 'roboto-bold-webfont', 'Roboto Thin': 'roboto-thin-webfont');

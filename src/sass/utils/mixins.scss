@@ -4,15 +4,16 @@
 @mixin mq($breakpoint){
     $bp-value: map.get($grid-breakpoints, $breakpoint);
 
-    @debug $bp-value; //console.log
+    // @debug $bp-value; //console.log
 
     @if $bp-value==null { //zabezpieczenie przekazania blednej wartosci
-        $bp-value: 0;
+        // $bp-value: 0;
         // @warn 'Breakpoint #{$breakpoint} is undefined. Default value (0px) has been used.'; //wypisuje console loga w debugu
+
+        // warn + default value, lub error, zalezy czego potrzebujemy
+
         @error 'Breakpoint #{$breakpoint} is undefined. Check variables.scss'; //error blokuje render cssa
     };
-
-    @debug $bp-value;
 
     @media only screen and (min-width: $bp-value){
         @content;
@@ -23,4 +24,12 @@
     @include mq(sm){
         color: red;
     }
+}
+
+@mixin font-face($family, $path){
+    font-family: '$family';
+    src: url('#{$path}') format('woff2'),
+         url('#{$path}') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

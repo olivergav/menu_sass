@@ -1,0 +1,17 @@
+@import '../variables';
+@import '../utils/mixins';
+
+html, body {
+    font-size: #{$base-font-size}px;
+ 
+    @include mq(lg){
+        font-size: #{$base-font-size * 2}px;;
+    }
+}
+
+@each $font-name, $file-name in $fonts {
+    @font-face {
+        @include font-face($font-name, #{$font-path}#{$file-name});
+    }
+}
+
